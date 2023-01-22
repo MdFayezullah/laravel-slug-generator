@@ -1,0 +1,28 @@
+{
+    "name": "fayez/unique-slug-generator",
+    "description": "a unique slug generator for laravel",
+    "type": "yes",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Fayez\\UniqueSlugGenerator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Md Fayezullah"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fayez\\UniqueSlugGenerator\\UniqueSlugServiceProvider"
+            ],
+            "aliases": {
+                "UniqueSlug": "Fayez\\UniqueSlugGenerator\\UniqueSlugFacade"
+            }
+        }
+    }
+}
