@@ -16,7 +16,7 @@ class UniqueSlug
      * @return string
      * @throws \Exception
      */
-    public function generate($model, $value, $field, $separator = null): string
+    public static function generate($model, $value, $field, $separator = null): string
     {
         $separator = empty($separator) ? config('laravel-unique-slug.separator') : $separator;
         $id = 0;
@@ -36,7 +36,7 @@ class UniqueSlug
 
         // Get any that could possibly be related.
         // This cuts the queries down by doing it once.
-        $allSlugs = $this->getRelatedSlugs($slug, $id, $model, $field);
+        $allSlugs = static::getRelatedSlugs($slug, $id, $model, $field);
 
         // If we haven't used it before then we are all good.
         if (!$allSlugs->contains("$field", $slug)) {
